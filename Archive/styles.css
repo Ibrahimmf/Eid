@@ -43,7 +43,7 @@ button {
     max-width: auto;
     height: auto;
     object-fit: contain;
-    max-height: 400px;
+    max-height: 100px;
 }
 .name-display {
     position: absolute;
