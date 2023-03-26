@@ -15,6 +15,7 @@ body {
 input {
     padding: 8px 12px;
     font-size: 16px;
+    direction:rtl;
 }
 
 button {
@@ -51,6 +52,7 @@ button {
     bottom: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+    direction:rtl;
 }
 
 .card-text {
@@ -61,5 +63,6 @@ button {
     font-weight: bold;
     transform: translate(-50%, -50%);
     color: #ffffff;
+    direction:rtl;
 }
 
