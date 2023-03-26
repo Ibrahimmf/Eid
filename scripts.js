@@ -1,43 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const nameInput = document.getElementById("name-input");
-    const submitName = document.getElementById("submit-name");
-    const saveCard = document.getElementById("save-card");
-    const nameDisplay = document.getElementById("name-display");
-
-    submitName.addEventListener("click", function () {
-        const name = nameInput.value;
-        if (name.trim() !== "") {
-            nameDisplay.textContent = name;
-        } else {
-            alert("الرجاء إدخال اسم قبل المتابعة.");
-        }
-    });
-
-    saveCard.addEventListener("click", function () {
-  if (nameDisplay.textContent.trim() !== "") {
-    const cardImage = document.getElementById("card-image");
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = cardImage.width;
-    canvas.height = cardImage.height;
-
-    ctx.drawImage(cardImage, 0, 0);
-    ctx.font = "bold 3em Arial";
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.shadowColor = "black";
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 2;
-    ctx.shadowBlur = 4;
-    ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height * 0.8);
-
-    const link = document.createElement("a");
-    link.href = canvas.toDataURL("image/png");
-    link.download = "بطاقة_التهنئة.png";
-    link.click();
-  } else {
-    alert("الرجاء إدخال اسم وعرض البطاقة قبل حفظها.");
-  }
-});
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقات التهنئة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>أدخل اسمك لإنشاء بطاقة التهنئة</h1>
+        <input type="text" id="nameInput" placeholder="اكتب اسمك هنا">
+        <button onclick="generateCard()">إنشاء بطاقة التهنئة</button>
+        <div class="card">
+            <img src="card_background.jpg" alt="خلفية بطاقة التهنئة" id="cardImage">
+            <div class="card-text" id="cardText"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
