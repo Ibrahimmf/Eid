@@ -42,7 +42,7 @@ button {
     width: 100%;
     max-width: auto;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 .name-display {
     position: absolute;
