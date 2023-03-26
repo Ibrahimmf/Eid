@@ -19,17 +19,9 @@ input {
 }
 
 button {
-    font-size: 1.2em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
+    padding: 8px 12px;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 4px;
 }
 
 .card {
@@ -39,19 +31,10 @@ button {
 }
 
 .card img {
-width: 100%;
-max-width: auto;
-height: auto;
-object-fit: contain;
-}
-.name-display {
-    position: absolute;
-    font-size: 1em;
-    color: white;
-    text-shadow: 2px 2px 4px #000000;
-    bottom: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
 }
 
 .card-text {
@@ -63,4 +46,5 @@ object-fit: contain;
     transform: translate(-50%, -50%);
     color: #ffffff;
 }
+
 
