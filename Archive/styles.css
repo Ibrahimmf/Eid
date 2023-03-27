@@ -52,7 +52,7 @@ button {
     text-shadow: 2px 2px 4px #000000;
     bottom: 15%;
     left: 50%;
-    transform: translateX(-50%) translateY(100%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .card-text {
