@@ -35,15 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
             canvas.height = cardImage.offsetHeight;
 
             ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
-            //ctx.font = "bold 1em Arial";
-            ctx.fillStyle = "white";
+	    ctx.font = "bold 1em Arial";
+	    ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
-            ctx.shadowColor = "black";
-            ctx.shadowOffsetX = 2;
-            ctx.shadowOffsetY = 2;
-            ctx.shadowBlur = 4;
-            ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height * 0.8);
+            ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height / 2);
+
 
             canvas.toBlob(function (blob) {
                 const link = document.createElement("a");
