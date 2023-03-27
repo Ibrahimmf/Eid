@@ -50,10 +50,10 @@ button {
 
 .name-display{
 	    position: absolute;
-    top: 74%;
+    top: 67%;
         width: 100%;
     text-align: center;
     font-size: 29px;
     color: white;
-    font-family: math;
+   
 }
