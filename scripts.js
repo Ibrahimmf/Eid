@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+ submitName.addEventListener("click", function () {
+	 
+	 generateCard();
+ });
     saveCard.addEventListener("click", function () {
         if (nameDisplay.textContent.trim() !== "") {
             const cardImage = document.getElementById("card-image");
