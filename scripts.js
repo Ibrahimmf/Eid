@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             canvas.height = cardImage.offsetHeight;
 
             ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
-            ctx.font = "bold 1em Arial";
+            ctx.font = "1em Almarai, sans-serif";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
