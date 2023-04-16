@@ -42,22 +42,22 @@ saveCard.addEventListener("click", function () {
     ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height / 2);
 
     canvas.toBlob(function (blob) {
-      const link = document.createElement("a");
-      link.href = window.URL.createObjectURL(blob);
-      link.download = "بطاقة_التهنئة.png";
-      link.click();
-	    
-	    // Create WhatsApp share button
-            const whatsappLink = `whatsapp://send?text=Check%20out%20my%20greeting%20card!%0A${window.location.href}`;
-            const whatsappButton = document.createElement("a");
-            whatsappButton.href = whatsappLink;
-            whatsappButton.target = "_blank";
-            whatsappButton.innerText = "Share via WhatsApp";
-            document.body.appendChild(whatsappButton);
-	   
-	    
-	    
-    });
+  const link = document.createElement("a");
+  link.href = window.URL.createObjectURL(blob);
+  link.download = "بطاقة_التهنئة.png";
+
+  // إنشاء رابط مشاركة الواتساب
+  const whatsappLink = "https://api.whatsapp.com/send?text=تم%20إنشاء%20هذه%20البطاقة%20لك%20من%20موقع%20التهنئة.%20قم%20بتحميل%20الصورة:%20" + encodeURIComponent(link.href);
+  const whatsappBtn = document.createElement("a");
+  whatsappBtn.href = whatsappLink;
+  whatsappBtn.target = "_blank";
+  whatsappBtn.innerText = "مشاركة عبر الواتساب";
+
+  // إضافة الزر لصفحة الويب
+  const container = document.getElementById("container");
+  container.appendChild(whatsappBtn);
+});
+
   } else {
     alert("الرجاء إدخال اسم وعرض البطاقة قبل حفظها.");
   }
