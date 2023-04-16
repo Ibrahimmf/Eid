@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
             ctx.font = "20px Almarai, sans-serif";
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "#A52A2A";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.shadowColor = "black";
