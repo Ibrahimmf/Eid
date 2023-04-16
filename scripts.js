@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
- submitName.addEventListener("click", function () {
+submitName.addEventListener("click", function () {
     generateCard();
 });
 
@@ -36,13 +36,6 @@ saveCard.addEventListener("click", function () {
 
         ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
         ctx.font = "20px Almarai, sans-serif";
-        canvas.style.position = "absolute";
-        canvas.style.top = "52%";
-        canvas.style.width = "100%";
-        canvas.style.textAlign = "center";
-        canvas.style.fontSize = "20px";
-        canvas.style.color = "#61481b";
-        
         ctx.fillStyle = "#61481b";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
@@ -50,7 +43,7 @@ saveCard.addEventListener("click", function () {
         ctx.shadowOffsetX = 2;
         ctx.shadowOffsetY = 2;
         ctx.shadowBlur = 4;
-        ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height * 0.8);
+        ctx.fillText(nameDisplay.textContent, cardImage.offsetWidth / 2, cardImage.offsetHeight * 0.8);
 
         canvas.toBlob(function (blob) {
             const link = document.createElement("a");
@@ -62,3 +55,4 @@ saveCard.addEventListener("click", function () {
         alert("الرجاء إدخال اسم وعرض البطاقة قبل حفظها.");
     }
 });
+
