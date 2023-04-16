@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
 	    ctx.font = "bold 1em Arial";
-	    ctx.fillStyle = "white";
+	    ctx.fillStyle = "#835C3B";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height / 2);
