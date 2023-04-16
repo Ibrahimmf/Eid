@@ -46,6 +46,17 @@ saveCard.addEventListener("click", function () {
       link.href = window.URL.createObjectURL(blob);
       link.download = "بطاقة_التهنئة.png";
       link.click();
+	    
+	    // Create WhatsApp share button
+            const whatsappLink = `whatsapp://send?text=Check%20out%20my%20greeting%20card!%0A${window.location.href}`;
+            const whatsappButton = document.createElement("a");
+            whatsappButton.href = whatsappLink;
+            whatsappButton.target = "_blank";
+            whatsappButton.innerText = "Share via WhatsApp";
+            document.body.appendChild(whatsappButton);
+	   
+	    
+	    
     });
   } else {
     alert("الرجاء إدخال اسم وعرض البطاقة قبل حفظها.");
