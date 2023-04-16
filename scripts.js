@@ -36,12 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
             ctx.font = "20px Almarai, sans-serif";
-//canvas.style.position = "absolute";
-//canvas.style.top = "52%";
-//canvas.style.width = "100%";
-//canvas.style.textAlign = "center";
-//canvas.style.fontSize = "20px";
-//canvas.style.color = "#61481b";
+
 	    	
 	    ctx.style.top = "52%";
 	    ctx.style.width = "100%";
