@@ -19,12 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("الرجاء إدخال اسم قبل المتابعة.");
         }
     };
-
  submitName.addEventListener("click", function () {
 	 
 	 generateCard();
  });
-	
     saveCard.addEventListener("click", function () {
         if (nameDisplay.textContent.trim() !== "") {
             const cardImage = document.getElementById("card-image");
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height / 2);
-
+ submitName.addEventListener("click", function () {
 
             canvas.toBlob(function (blob) {
                 const link = document.createElement("a");
