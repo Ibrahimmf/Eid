@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	    ctx.fillStyle = "#835C3B";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
-            ctx.fillText(nameDisplay.textContent, canvas.width / 5, canvas.height / 5);
+            ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height / 2);
 
 
             canvas.toBlob(function (blob) {
