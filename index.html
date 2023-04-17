@@ -1,31 +1,86 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Gulzar&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>خدمة بطاقات التهنئة</title>
+    <title>بطاقة المعايدة</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andalus&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #card-container {
+            position: relative;
+            display: inline-block;
+            border: 5px solid gold;
+            border-radius: 10px;
+            width: 300px;
+            height: 500px;
+            margin-bottom: 20px;
+        }
+
+        #card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #text-overlay {
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            direction:rtl;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            white-space: nowrap;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>نهنئكم بحلول عيد الفطر المبارك</h1>
-        <h2> وكل عام وأنتم بخير</h2>
-        <h3>و نقدم لكم خدمة إصدار بطاقة التهنئة الخاصة بكم</h3>
-        <div class="card">
-            <img src="card-image.jpg" alt="بطاقة تهنئة" id="card-image">
-            <div id="name-display" class="name-display"></div>
-        </div>
-        <div class="input-section">
-            <label for="name-input">أدخل اسمك:</label>
-            <input type="text" id="name-input" placeholder="أدخل اسمك هنا">
-            <button id="submit-name">عرض البطاقة</button>
-            <button id="save-card">حفظ البطاقة</button>
-        </div>
+    <div id="card-container">
+        <img id="card-image" src="card-image1.jpg" alt="Greeting Card">
+        <div id="text-overlay">ادخل اسمك هنا</div>
     </div>
-    <script src="scripts.js"></script>
-</body>
-</html>
+
+    <input type="text" id="name-input" placeholder="أدخل اسمك هنا">
+
+    <label for="card-selector">اختر الصورة:</label>
+    <select id="card-selector">
+        <option value="img1.jpg">صورة 1</option>
+        <option value="img2.jpg">صورة 2</option>
+        <option value="img3.jpg">صورة 3</option>
+    </select>
+
+    <button id="apply-text">تطبيق النص</button>
+    <button id="download-card">تحميل البطاقة</button>
+
+    <script>
+        document.getElementById('apply-text').addEventListener('click', function () {
+            const textOverlay = document.getElementById('text-overlay');
+            const nameInput = document.getElementById('name-input');
+            textOverlay.textContent = nameInput.value;
+        });
+
+        document.getElementById('card-selector').addEventListener('change', function () {
+            const cardImage = document.getElementById('card-image');
+            cardImage.src = this.value;
+        });
+
+        document.getElementById('download-card').addEventListener('click', function () {
+            const cardContainer = document.getElementById('card-container');
+            html2canvas(cardContainer).then(canvas => {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL();
+                link.download = 'greeting-card.png';
+                link.click();
+            });
+        });
+    </script>
+
+
+</body></html>
