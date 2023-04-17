@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	 
 	 generateCard();
  });
-	saveCard.addEventListener("click", function () {
+    saveCard.addEventListener("click", function () {
         if (nameDisplay.textContent.trim() !== "") {
             const cardImage = document.getElementById("card-image");
             const cardText = document.getElementById("card-text");
@@ -36,35 +36,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
             ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
 	    ctx.font = "20px Almarai, sans-serif";
-            ctx.fillStyle = "#835C3B";
+	    ctx.fillStyle = "#835C3B";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.fillText(nameDisplay.textContent, canvas.width / 2, canvas.height / 2);
 
-            const shareButton = document.createElement("button");
-            shareButton.textContent = "مشاركة على الواتساب";
-            shareButton.addEventListener("click", function () {
-                const dataUrl = canvas.toDataURL();
-                const encodedData = encodeURIComponent(dataUrl);
-                const whatsappUrl = "whatsapp://send?text=" + encodedData;
-                window.location.href = whatsappUrl;
-            });
-
-            const cardContainer = document.getElementById("card-container");
-            cardContainer.appendChild(shareButton);
 
             canvas.toBlob(function (blob) {
                 const link = document.createElement("a");
                 link.href = window.URL.createObjectURL(blob);
                 link.download = "بطاقة_التهنئة.png";
                 link.click();
-    
+            });
+        } else {
+            alert("الرجاء إدخال اسم وعرض البطاقة قبل حفظها.");
+        }
     });
-
-
-  } else {
-    alert("الرجاء إدخال اسم وعرض البطاقة قبل حفظها.");
-  }
 });
 
-});
+
